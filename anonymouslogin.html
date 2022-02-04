@@ -1,0 +1,675 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Welcome Back</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>
+      @font-face {
+        font-family: "Gilroy";
+        font-weight: 400;
+        font-display: swap;
+        src: url("https://assets.mindvalley.com/api/v1/assets/8aeb3ba5-277b-4b29-bed8-6a5184e5b994.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Gilroy";
+        font-weight: 500;
+        font-display: swap;
+        src: url("https://assets.mindvalley.com/api/v1/assets/114c950b-9277-423a-9dc4-8643857d13da.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Gilroy";
+        font-weight: 600;
+        font-display: swap;
+        src: url("https://assets.mindvalley.com/api/v1/assets/f62d29d9-74d3-4e2f-9807-72df81484425.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Gilroy";
+        font-weight: 700;
+        font-display: swap;
+        src: url("https://assets.mindvalley.com/api/v1/assets/96099070-34b6-4223-87b1-efe32cbdd4dd.woff2") format("woff2");
+      }
+
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        min-height: 100%;
+        font-size: 16px;
+      }
+
+      main {
+        background-image: url('https://assets.mindvalley.com/api/v1/assets/518df9e0-4ded-42f1-a697-f23a16b02ad3.jpg');
+        background-color: #ebebeb;
+        background-size: cover;
+        background-position: center;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .logo {
+        margin: 1em;
+      }
+
+      .form-wrapper {
+        background-color: white;
+        border-radius: 0.5em;
+        text-align: center;
+        padding: 2em 3em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-widget {
+        width: 20em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-content-wrapper {
+        overflow: inherit;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-cred-pane-internal-wrapper {
+        height: auto;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-header {
+        padding: 0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-header-bg,
+      body .auth0-lock.auth0-lock .auth0-lock-header-logo {
+        display: none;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-tabs-container {
+        margin: 0 -1.5em 2em -1.5em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-tabs li {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-tabs li a,
+      body .auth0-lock.auth0-lock .auth0-lock-tabs li span {
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 600;
+        font-size: 1.2em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-tabs li.auth0-lock-tabs-current span {
+        color: #000;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-content p {
+        color: #95989D;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 500;
+        font-size: 0.825em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-form {
+        padding: 0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-wrap {
+        border: 1px solid #D6D6D6;
+        background: #F9FAFB;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-input {
+        font-size: 0.75em;
+        font-weight: 400;
+        height: 50px;
+        border-radius: 0 0.25em 0.25em 0;
+        font-family: 'Gilroy', sans-serif;
+        letter-spacing: 0.11px;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-wrap.auth0-lock-input-wrap-with-icon {
+        padding-left: 3em;
+        border-radius: 0.25em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-block {
+        margin-bottom: 1.25em;
+        border-radius: 0.25em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-show-password .auth0-lock-show-password,
+      body .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon.auth0-lock-icon-box {
+        top: 1.125rem;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-input-wrap .auth0-lock-icon.auth0-lock-icon-box {
+        left: 1.125rem;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative {
+        margin: 0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-form .auth0-lock-alternative .auth0-lock-alternative-link {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.4px;
+        color: #003FFF;
+        font-family: 'Gilroy', sans-serif;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-submit,
+      body .auth0-lock.auth0-lock .auth0-lock-social-big-button {
+        border-radius: 2em;
+        font-weight: 600;
+        font-size: 1em;
+        font-family: 'Gilroy', sans-serif;
+        letter-spacing: 0;
+        line-height: 0.75em;
+        padding: 3px 14px;
+        text-transform: initial;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-submit {
+        margin-top: 1.25em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-submit span svg {
+        display: none;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button {
+        width: 100%;
+        height: auto;
+        border: 1px solid #e1e1e1;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button .auth0-lock-social-button-icon {
+        transition: none;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button {
+        display: flex;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button .auth0-lock-social-button-icon {
+        position: initial;
+        background-size: 70%;
+        background-color: transparent !important;
+        border: none;
+        height: 40px;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button[data-provider^=google].auth0-lock-social-big-button .auth0-lock-social-button-icon {
+        height: 31px;
+        width: 31px;
+        margin: 5px;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button .auth0-lock-social-button-text {
+        transition: none;
+        text-transform: initial;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 600;
+        font-size: 1em;
+        color: #000;
+        padding: 0.125em 0;
+        text-align: center;
+        width: auto;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:hover:not([disabled]) .auth0-lock-social-button-text,
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:focus:not([disabled]) .auth0-lock-social-button-text,
+      body .auth0-lock.auth0-lock .auth0-lock-social-button.auth0-lock-social-big-button:hover:not([disabled]) .auth0-lock-social-button-icon {
+        background-color: transparent !important;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-error,
+      body .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-success {
+        text-transform: initial;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: bold;
+        font-size: 0.75em;
+        background: transparent;
+        margin-bottom: 0.9em;
+        border-radius: 0.75em;
+        text-align: left;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-error {
+        color: #EF2B2E;
+        border: 1px solid #EF2B2E;
+        background-color: #FEF3F3;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-global-message.auth0-global-message-success {
+        color: #07A977;
+        border: 1px solid #07A977;
+        background-color: #E0F7F0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-error .auth0-lock-input-wrap {
+        border-radius: 0.25em 0.25em 0 0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-error-msg {
+        color: #fff;
+        background-color: #f00;
+        border-radius: 0 0 0.25em 0.25em;
+        text-align: left;
+        margin-top: 0;
+        padding: 0.4em 0.75em;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: normal;
+        font-size: 0.75em;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-back-button {
+        top: 18px;
+        left: 0;
+        box-shadow: none;
+        height: 20px;
+        width: 20px;
+        background: #fff;
+        border: none;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-name {
+        color: #000;
+        font-family: 'Gilroy', sans-serif;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 30px;
+        padding: 0.5em 0;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-terms {
+        background-color: inherit;
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 0.825em;
+        line-height: 22px;
+        letter-spacing: 0.05px;
+        color: #797979;
+        text-align: left;
+      }
+
+      body .auth0-lock.auth0-lock .auth0-lock-terms a {
+        color: #003FFF;
+      }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  </head>
+  <body>
+    <main>
+      <section>
+        <a href="https://home.mindvalley.com" class="logo">
+          <img src="https://assets.mindvalley.com/api/v1/assets/c2d1e849-9114-46cf-97cd-c8298e7577f8.svg" alt="mindvalley logo">
+        </a>
+        <div class="form-wrapper">
+          <div id="widget-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <!--[if IE 8]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ie8/0.2.5/ie8.js"></script>
+    <![endif]-->
+
+    <!--[if lte IE 9]>
+    <script src="https://cdn.auth0.com/js/base64.js"></script>
+    <script src="https://cdn.auth0.com/js/es5-shim.min.js"></script>
+    <![endif]-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.11.1/lodash.min.js"></script>
+    <script src="https://cdn.auth0.com/js/lock/11.24.3/lock.min.js"></script>
+
+    <script>
+      // Decode utf8 characters properly
+
+      var config = JSON.parse(decodeURIComponent(escape(window.atob('eyJpY29uIjoiaHR0cHM6Ly9hc3NldHMubWluZHZhbGxleS5jb20vYXBpL3YxL2Fzc2V0cy9lNjVhZTdmMC0zODg2LTRiNTUtYTA2Ny0wNWYxNGEyZThkMzkucG5nIiwiYXNzZXRzVXJsIjoiIiwiYXV0aDBEb21haW4iOiJsb2dpbi5taW5kdmFsbGV5LmNvbSIsImF1dGgwVGVuYW50IjoibWluZHZhbGxleSIsImNsaWVudENvbmZpZ3VyYXRpb25CYXNlVXJsIjoiaHR0cHM6Ly9sb2dpbi5taW5kdmFsbGV5LmNvbS8iLCJjYWxsYmFja09uTG9jYXRpb25IYXNoIjpmYWxzZSwiY2FsbGJhY2tVUkwiOiJodHRwczovL2hvbWUubWluZHZhbGxleS5jb20vYXV0aC9hdXRoMC9jYWxsYmFjayIsImNkbiI6Imh0dHBzOi8vY2RuLmF1dGgwLmNvbS8iLCJjbGllbnRJRCI6IktSYUZtQ2VrdEF0WFI2c2QyZ3VtV1ZGUWE2QW5YbndGIiwiZGljdCI6eyJzaWduaW4iOnsidGl0bGUiOiJFbHVsYSJ9fSwiZXh0cmFQYXJhbXMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJyZXNwb25zZV90eXBlIjoiY29kZSIsInNjb3BlIjoib3BlbmlkIG5hbWUgZW1haWwiLCJfY3NyZiI6IjhYb2VSeVI4LXNTTDNfRVZvV05SMGVob3k4UTVJcGxJLXFDcyIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0J0VW1SNFRuaHpWV2Q2U0hWbGNsQnBWR2Q0VlMxRlpFUTBSRFJVUTJOVE1LRnVwV3h2WjJsdW8zUnBaTmtnTVdSdFUxbDVNbnBsVFZnMFJVSnljVFUxYjNwUFdtTlROWFpVUjBkR1RYR2pZMmxrMlNCTFVtRkdiVU5sYTNSQmRGaFNObk5rTW1kMWJWZFdSbEZoTmtGdVdHNTNSZyJ9LCJpbnRlcm5hbE9wdGlvbnMiOnsicHJvdG9jb2wiOiJvYXV0aDIiLCJyZXNwb25zZV90eXBlIjoiY29kZSIsInNjb3BlIjoib3BlbmlkIG5hbWUgZW1haWwiLCJfY3NyZiI6IjhYb2VSeVI4LXNTTDNfRVZvV05SMGVob3k4UTVJcGxJLXFDcyIsIl9pbnRzdGF0ZSI6ImRlcHJlY2F0ZWQiLCJzdGF0ZSI6ImhLRm8yU0J0VW1SNFRuaHpWV2Q2U0hWbGNsQnBWR2Q0VlMxRlpFUTBSRFJVUTJOVE1LRnVwV3h2WjJsdW8zUnBaTmtnTVdSdFUxbDVNbnBsVFZnMFJVSnljVFUxYjNwUFdtTlROWFpVUjBkR1RYR2pZMmxrMlNCTFVtRkdiVU5sYTNSQmRGaFNObk5rTW1kMWJWZFdSbEZoTmtGdVdHNTNSZyJ9LCJ3aWRnZXRVcmwiOiJodHRwczovL2Nkbi5hdXRoMC5jb20vdzIvYXV0aDAtd2lkZ2V0LTUuMS5taW4uanMiLCJpc1RoaXJkUGFydHlDbGllbnQiOmZhbHNlLCJhdXRob3JpemF0aW9uU2VydmVyIjp7InVybCI6Imh0dHBzOi8vbG9naW4ubWluZHZhbGxleS5jb20iLCJpc3N1ZXIiOiJodHRwczovL2xvZ2luLm1pbmR2YWxsZXkuY29tLyJ9LCJjb2xvcnMiOnt9fQ=='))));
+      config.extraParams = config.extraParams || {};
+
+      var initialScreen = config.extraParams['screen_hint'] === 'signup' ? 'signUp' : 'login';
+
+      var languageDictionary = {
+        htmlPageTitle: 'Welcome Back',
+        title: '',
+        loginTitle: '',
+        loginLabel: 'Login',
+        loginSubmitLabel: 'Login',
+        signUpTitle: '',
+        signUpLabel: 'Create New Account',
+        signUpSubmitLabel: 'Sign up',
+        loginWithLabel: 'Continue with %s',
+        signUpWithLabel: 'Continue with %s',
+        emailInputPlaceholder: 'Your Email',
+        passwordInputPlaceholder: 'Your Password',
+        signUpTerms: 'By signing up, you agree to <a href="https://www.mindvalley.com/terms-of-use" target="_blank">our terms of service</a> and <a href="https://www.mindvalley.com/privacy-policy" target="_blank">privacy policy</a>.',
+        error: {
+          login: {
+            'lock.fallback': 'Wrong email or password.'
+          }
+        },
+        firstName: 'First Name'
+      }
+
+      var acceptedLanguages = ['en', 'fr', 'de', 'es', 'pt', 'it', 'ru', 'zh'];
+
+      var configLang = String(config.extraParams.language).substring(0,2).toLowerCase();
+      configLang = acceptedLanguages.includes(configLang) ? configLang : "";
+      var browserLang = String(navigator.language).substring(0,2).toLowerCase();
+      browserLang = acceptedLanguages.includes(browserLang) ? browserLang : "";
+
+      var lang = configLang || browserLang || 'en';
+
+      console.log('The language is ---- ' + lang);
+
+      switch(lang) {
+        case "fr":
+          languageDictionary = {
+            htmlPageTitle: 'Bienvenue',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'S\'identifier',
+            loginSubmitLabel: 'S\'identifier avec Mindvalley',
+            signUpTitle: '',
+            signUpLabel: 'Créer un nouveau compte',
+            signUpSubmitLabel: 'S\'inscrire avec Mindvalley',
+            loginWithLabel: 'Continuer avec %s',
+            signUpWithLabel: 'Continuer avec %s',
+            emailInputPlaceholder: 'Votre email',
+            passwordInputPlaceholder: 'Votre mot de passe',
+            signUpTerms: 'En vous inscrivant, vous acceptez nos <a href="https://www.mindvalley.com/terms-of-use" target="_blank">conditions d\'utilisation</a> et notre <a href="https://www.mindvalley.com/privacy-policy" target="_blank">politique de confidentialité</a>.',
+            error: {
+              login: {
+                'lock.fallback': 'Email ou mot de passe incorrect.'
+              }
+            },
+            firstName: 'Prénom',
+            forgotPasswordTitle: 'Réinitialisez votre mot de passe'
+          };
+          break;
+        case "de":
+          languageDictionary = {
+            htmlPageTitle: 'Willkommen zurück',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'Anmelden',
+            loginSubmitLabel: 'Mit Mindvalley anmelden',
+            signUpTitle: '',
+            signUpLabel: 'Neues Benutzerkonto erstellen',
+            signUpSubmitLabel: 'Mit Mindvalley registrieren',
+            loginWithLabel: 'Fortfahren mit %s',
+            signUpWithLabel: 'Fortfahren mit %s',
+            emailInputPlaceholder: 'Deine E-mail Adresse',
+            passwordInputPlaceholder: 'Dein Passwort',
+            signUpTerms: 'Mit deiner Anmeldung stimmst du unseren <a href="https://www.mindvalley.com/terms-of-use" target="_blank">Nutzungsbedingungen</a> und <a href="https://www.mindvalley.com/privacy-policy" target="_blank">Datenschutzbestimmungen</a> zu.',
+            error: {
+              login: {
+                'lock.fallback': 'Falsche E-Mail Adresse oder Passwort.'
+              }
+            },
+            firstName: 'Vorname',
+            forgotPasswordInstructions: 'Bitte gib deine E-Mail-Adresse ein. Wir werden dir eine E-Mail senden, um dein Passwort zurücksetzen zu können.',
+            forgotPasswordTitle: 'Setze dein Passwort zurück'
+          };
+          break;
+        case "es":
+          languageDictionary = {
+            htmlPageTitle: 'Bienvenido de nuevo',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'Iniciar sesión',
+            loginSubmitLabel: 'Iniciar sesión en Mindvalley',
+            signUpTitle: '',
+            signUpLabel: 'Crear una nueva cuenta',
+            signUpSubmitLabel: 'Regístrate en Mindvalley',
+            loginWithLabel: 'Continuar con %s',
+            signUpWithLabel: 'Continuar con %s',
+            emailInputPlaceholder: 'Tu correo electrónico',
+            passwordInputPlaceholder: 'Tu contraseña',
+            signUpTerms: 'Al suscribirte, estás aceptando nuestros <a href="https://www.mindvalley.com/terms-of-use" target="_blank">términos de servicio</a> y <a href="https://www.mindvalley.com/privacy-policy" target="_blank">política de privacidad</a>.',
+            error: {
+              login: {
+                'lock.fallback': 'Correo o contraseña equivocada.'
+              }
+            },
+            firstName: 'Nombre',
+            forgotPasswordAction: '¿Olvidaste tu contraseña?',
+            forgotPasswordInstructions: 'Por favor ingresa tu correo electrónico. Te enviaremos las instrucciones para restablecer tu contraseña.'
+          };
+          break;
+        case "pt":
+          languageDictionary = {
+            htmlPageTitle: 'Bem-vindo de volta',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'Acessar conta',
+            loginSubmitLabel: 'Acessar conta na Mindvalley',
+            signUpTitle: '',
+            signUpLabel: 'Criar nova conta',
+            signUpSubmitLabel: 'Criar nova conta na Mindvalley',
+            loginWithLabel: 'Continuar com %s',
+            signUpWithLabel: 'Continuar com %s',
+            emailInputPlaceholder: 'Seu endereço de email',
+            passwordInputPlaceholder: 'Sua senha',
+            signUpTerms: 'Ao se inscrever, você declara estar de acordo com nossos <a href="https://www.mindvalley.com/terms-of-use" target="_blank">termos de serviço</a> e <a href="https://www.mindvalley.com/privacy-policy" target="_blank">política de privacidade</a>.',
+            error: {
+              login: {
+                'lock.fallback': 'Email ou senha incorretos.'
+              }
+            },
+            firstName: 'Nome',
+            forgotPasswordAction: 'Esqueceu sua senha?',
+            forgotPasswordTitle: 'Recuperar sua senha',
+            forgotPasswordInstructions: 'Digite o seu endereço de email e você receberá um email com instruções para redefinir sua senha.'
+          };
+          break;
+        case "it":
+          languageDictionary = {
+            htmlPageTitle: 'Rieccoti qui',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'Login',
+            loginSubmitLabel: 'Login con l’account Mindvalley',
+            signUpTitle: '',
+            signUpLabel: 'Crea un nuovo account',
+            signUpSubmitLabel: 'Crea un nuovo account con Mindvalley',
+            loginWithLabel: 'Continua con %s',
+            signUpWithLabel: 'Continua con %s',
+            emailInputPlaceholder: 'La tua email',
+            passwordInputPlaceholder: 'La tua password',
+            signUpTerms: 'Iscrivendoti, accetti la nostra  <a href="https://www.mindvalley.com/terms-of-use" target="_blank">termini e condizioni</a> e i nostri <a href="https://www.mindvalley.com/privacy-policy" target="_blank">privacy policy</a>.',
+            error: {
+              login: {
+                'lock.fallback': 'Email o password errate.'
+              }
+            },
+            firstName: 'Nome'
+          };
+          break;
+        case "ru":
+          languageDictionary = {
+            htmlPageTitle: 'Добро пожаловать!',
+            title: '',
+            loginTitle: '',
+            loginLabel: 'Войти',
+            loginSubmitLabel: 'Войти',
+            signUpTitle: '',
+            signUpLabel: 'Создать новый аккаунт',
+            signUpSubmitLabel: 'Зарегистрироваться в MIndvalley',
+            loginWithLabel: 'Продолжить с %s',
+            signUpWithLabel: 'Продолжить с %s',
+            emailInputPlaceholder: 'Ваш адрес электронной почты',
+            passwordInputPlaceholder: 'Ваш пароль',
+            signUpTerms: 'Регистрируясь, вы соглашаетесь с нашими <a href="https://www.mindvalley.com/terms-of-use" target="_blank">условиями пользования</a> и <a href="https://www.mindvalley.com/privacy-policy" target="_blank">политикой конфиденциальности</a>.',
+            error: {
+              login: {
+                'lock.fallback': 'Неправильный адрес электронной почты или пароль.'
+              }
+            },
+            firstName: 'ВАШЕ ИМЯ'
+          };
+          break;
+        case "zh":
+          languageDictionary = {
+            htmlPageTitle: '欢迎回来',
+            title: '',
+            loginTitle: '',
+            loginLabel: '登录',
+            loginSubmitLabel: '用 Mindvalley 登录',
+            signUpTitle: '',
+            signUpLabel: '建立新帐户',
+            signUpSubmitLabel: '用 Mindvalley 注册',
+            loginWithLabel: '继续 %s',
+            signUpWithLabel: '继续 %s',
+            emailInputPlaceholder: '您的电子邮件地址',
+            passwordInputPlaceholder: '您的密码',
+            signUpTerms: '签署即表示您同意我们的 <a href="https://www.mindvalley.com/terms-of-use" target="_blank">服务条款</a> 和 <a href="https://www.mindvalley.com/privacy-policy" target="_blank">隐私政策</a>',
+            error: {
+              login: {
+                'lock.fallback': '错误的密码或电子邮件'
+              }
+            },
+            firstName: '名'
+          };
+          break;
+        default:
+      }
+
+      // set page title
+      document.title = languageDictionary.htmlPageTitle;
+
+      var initializationOptions = {
+        allowAutocomplete: true,
+        allowShowPassword: true,
+        allowedConnections: ['Username-Password-Authentication', 'apple', 'facebook', 'google-oauth2'],
+        avatar: null,
+        closable: false,
+        container: 'widget-container',
+        language: lang,
+        languageDictionary: languageDictionary,
+        rememberLastLogin: !config.prompt, //check this out
+        theme: {
+          authButtons: {
+            'apple': {
+              displayName: 'Apple',
+              primaryColor: '#F9FAFB',
+              foregroundColor: '#000',
+              icon: 'https://assets.mindvalley.com/api/v1/assets/205bcfcc-4ea9-49f1-9ecc-1cdc29d9d831.svg'
+            },
+            'facebook': {
+              displayName: 'Facebook',
+              primaryColor: '#F9FAFB',
+              foregroundColor: '#000',
+              icon: 'https://assets.mindvalley.com/api/v1/assets/9a1a68dc-ffa5-4d31-bfaf-1229589a2cef.svg'
+            },
+            'google-oauth2': {
+              displayName: 'Google',
+              primaryColor: '#F9FAFB',
+              foregroundColor: '#000',
+              icon: 'https://assets.mindvalley.com/api/v1/assets/034cb497-dde7-4554-8f72-03a509298a99.svg'
+            }
+          },
+          primaryColor: '#003FFF'
+        },
+        auth: {
+          redirectUrl: config.callbackURL,
+          responseType: (config.internalOptions || {}).response_type || (config.callbackOnLocationHash ? 'token' : 'code'),
+          params: config.internalOptions,
+          redirect: false,
+          sso: true
+        },
+        additionalSignUpFields: [
+          {
+            name: 'first_name',
+            placeholder: languageDictionary.firstName,
+          },
+          {
+            type: "hidden",
+            name: "lang",
+            value: lang
+          }
+        ],
+        allowLogin: true,
+        allowSignUp: true,
+        allowForgotPassword: true,
+        loginAfterSignUp: true,
+        initialScreen: initialScreen,
+        configurationBaseUrl: config.clientConfigurationBaseUrl,
+        overrides: {
+          __tenant: config.auth0Tenant,
+          __token_issuer: config.authorizationServer.issuer
+        },
+        assetsUrl: config.assetsUrl,
+        socialButtonStyle: 'big',
+      }
+
+      var lock = new Auth0Lock(config.clientID, config.auth0Domain, initializationOptions);
+
+      if (getErrorFromCallbackURL() == '') {
+        lock.show();
+      } else {
+        lock.show({
+          flashMessage:{
+            type: 'error',
+            text: getErrorFromCallbackURL()
+          }
+        });
+      }
+
+      function getQueryParameter(url, name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&]*)"),
+            results = regex.exec(url);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+      }
+
+      function getErrorFromCallbackURL() {
+        return getQueryParameter(config.callbackURL, 'error_description');
+      }
+    </script>
+  </body>
+</html>
